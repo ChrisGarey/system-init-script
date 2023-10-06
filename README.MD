@@ -1,6 +1,6 @@
 System Initialization and Maintenance Script
 
-![](https://github.com/ChrisGarey/system-init-script/images/demo.gif)
+![](https://github.com/ChrisGarey/system-init-script/blob/main/images/demo.gif)
 
 This Python script automates system initialization and maintenance tasks for Debian-based distributions. It checks and optimizes your system for performance, updates package sources, ranks and updates mirrors, upgrades the system, and enables essential services like the firewall and SMART disk monitoring. The script also provides a colorful and welcoming terminal interface for a delightful user experience.
 
