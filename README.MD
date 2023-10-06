@@ -28,18 +28,22 @@ Follow the instructions below to get started with this system initialization scr
 ### Installation
 
 1. Clone the repository:
-git clone https://github.com/ChrisGarey/system-init-script.git
+    
+    git clone https://github.com/ChrisGarey/system-init-script.git
 
 Navigate to the project directory:
-cd system-init-script
+
+    cd system-init-script
 
 Install Python dependencies:
-pip install -r requirements.txt
+
+    pip install -r requirements.txt
 
 ### Usage
 
 Run the script:
-python system_init.py
+
+    python system_init.py
 
     Follow the on-screen instructions to initialize your system.
 
