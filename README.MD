@@ -1,84 +1,48 @@
-# System Initialization Script
+System Initialization and Maintenance Script
 
-A Python script for system initialization and setup with colorful banners.
+Custom GIF Here
 
-![System Initialization](./images/system-init.gif)
+This Python script automates system initialization and maintenance tasks for Debian-based distributions. It checks and optimizes your system for performance, updates package sources, ranks and updates mirrors, upgrades the system, and enables essential services like the firewall and SMART disk monitoring. The script also provides a colorful and welcoming terminal interface for a delightful user experience.
+###Features
 
-## Overview
+    🚀 Initiates system maintenance tasks with progress bars.
+    📊 Runs SMART disk checks and optimizes disk health.
+    🔄 Updates package sources for the latest software.
+    🌐 Ranks and updates mirrors for faster package downloads.
+    ⬆ Upgrades the system to the latest packages.
+    🛡 Enables the firewall for enhanced security.
+    💽 Enables SMART disk monitoring to detect disk issues.
+    📈 Displays system information, including IP address.
+    🎨 Adds a colorful and customizable terminal banner.
 
-This Python script automates system initialization tasks, such as checking system resources, starting services, upgrading and displaying a colorful welcome banner. It provides a visual and informative way to set up and prepare a system for use.
+###Requirements
 
-## Features
+    Python 3.x
+    pySMART Python package
+    rich Python package
+    speedtest-cli for network speed testing
 
-- Check system resources for errors.
-- Start essential services like a firewall and SMART disk monitoring.
-- Updates and Upgrades the system.
-- Display a colorful and eye-catching welcome banner.
-- Provides a progress bar for each initialization step.
+###Usage
 
-## Getting Started
+Clone this repository to your local machine.
 
-Follow the instructions below to get started with this system initialization script.
+```git clone https://github.com/yourusername/system-maintenance-script.git```
 
-### Prerequisites
+Before running the script, make sure you have the required Python packages installed. You can install them using `pip`:
 
-- **Python 3:** The script is written in Python 3. You can download and install Python 3 from [python.org](https://www.python.org/downloads/).
 
-- **Smartmontools:** To perform disk health checks, this script relies on smartmontools. You can install smartmontools using a package manager. For instance, on Ubuntu or Debian-based systems, use apt:
+```pip install -r REQUIREMENTS```
 
-    ```
-    sudo apt-get install smartmontools
-    ```
-- **Figlet:** This script uses the `figlet` program to generate colorful banners. You can install `figlet` using the package manager for your system. For example, on Ubuntu or Debian-based systems, you can use `apt`:
+Run the script as a superuser (root) to execute system maintenance tasks.
 
-    ```
-    sudo apt-get install figlet
-    ```
-- Make sure that figlet is in your system's PATH after installation.
+```sudo python system_maintenance.py```
 
-- **Python dependencies:** Install python dependencies via pip:
+Follow the on-screen prompts to initiate the system maintenance process.
 
-    ```
-    pip install -r requirements.txt
-    ```
+###Customize
 
-### Installation
+You can customize the script by modifying the code to suit your specific needs. The script provides a foundation for automating system maintenance tasks on Debian-based distributions.
+Author
 
-1. Clone the repository:
-    
-    git clone https://github.com/ChrisGarey/system-init-script.git
-
-Navigate to the project directory:
-
-    cd system-init-script
-
-### Usage
-
-Run the script:
-
-    python system_init.py
-
-Follow the on-screen instructions to initialize your system.
-
-### Contributing
-
-Contributions are welcome! If you'd like to contribute to this project, please follow the guidelines in the CONTRIBUTING.md file.
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-Acknowledgments
-
-    pySMART for SMART disk monitoring.
-    rich for creating colorful and interactive console output.
-
-Contact
-
-If you have any questions or suggestions, please feel free to reach out to me:
-
-    Email: chrisgarey2014@gmail.com
+    Christopher Garey
     GitHub: ChrisGarey
-
-Support
-
-For additional support or discussions, you can visit the GitHub Discussions section of this repository.
-
