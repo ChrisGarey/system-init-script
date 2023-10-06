@@ -1,10 +1,10 @@
-System Initialization and Maintenance Script
+# System Initialization and Maintenance Script
 
 ![](https://github.com/ChrisGarey/system-init-script/blob/main/images/demo.gif)
 
 This Python script automates system initialization and maintenance tasks for Debian-based distributions. It checks and optimizes your system for performance, updates package sources, ranks and updates mirrors, upgrades the system, and enables essential services like the firewall and SMART disk monitoring. The script also provides a colorful and welcoming terminal interface for a delightful user experience.
 
-Features
+## Features
 
 🚀 Initiates system maintenance tasks with progress bars.
 📊 Runs SMART disk checks and optimizes disk health.
@@ -16,14 +16,14 @@ Features
 📈 Displays system information, including IP address.
 🎨 Adds a colorful and customizable terminal banner.
 
-Requirements
+## Requirements
 
     Python 3.x
     pySMART Python package
     rich Python package
     speedtest-cli for network speed testing
 
-Usage
+## Usage
 
 Clone this repository to your local machine.
 
@@ -40,7 +40,7 @@ Run the script as a superuser (root) to execute system maintenance tasks.
 
 Follow the on-screen prompts to initiate the system maintenance process.
 
-Customize
+## Customize
 
 You can customize the script by modifying the code to suit your specific needs. The script provides a foundation for automating system maintenance tasks on Debian-based distributions.
 Author
