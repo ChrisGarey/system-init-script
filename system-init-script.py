@@ -39,7 +39,7 @@ def run_smart_disk_check(device_to_check):
         print("SMART disk check completed successfully.\n")
     else:
         print("Error running SMART disk check. Please investigate.")
-        exit(1)
+        
 
 # Function to update the system (Debian-based distributions)
 def update_debian_system():
@@ -58,7 +58,7 @@ def update_debian_system():
         print("System updated.")
     else:
         print("The system encountered an error checking updating. Please investigate.")
-        exit(1)
+        
 
 # Function to rank and update mirrors (Debian-based distributions)
 def rank_and_update_debian_mirrors():
@@ -175,7 +175,7 @@ if __name__ == "__main__":
                 print(f"{device} unmounted successfully.")
             else:
                 print("Error unmounting the device. Please investigate.")
-                exit(1)
+                
         else:
             print(f"The device {device} is not mounted.")
 
@@ -189,7 +189,7 @@ if __name__ == "__main__":
            
         else:
             print("Error remounting the device. Please investigate.")
-            exit(1)
+            
 
     # Start system check
     # Detect the user's primary hard drive
