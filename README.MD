@@ -21,9 +21,22 @@ Follow the instructions below to get started with this system initialization scr
 
 ### Prerequisites
 
-- Python 3.x
-- Smartmontools (smartctl) installed (for disk checks)
-- figlet and lolcat installed (for colorful banners)
+- **Python 3:** The script is written in Python 3. You can download and install Python 3 from [python.org](https://www.python.org/downloads/).
+
+- **Smartmontools:** To perform disk health checks, this script relies on smartmontools. You can install smartmontools using a package manager. For instance, on Ubuntu or Debian-based systems, use apt:
+
+    sudo apt-get install smartmontools
+
+- **Figlet:** This script uses the `figlet` program to generate colorful banners. You can install `figlet` using the package manager for your system. For example, on Ubuntu or Debian-based systems, you can use `apt`:
+
+    sudo apt-get install figlet
+
+- Make sure that figlet is in your system's PATH after installation.
+
+- **Python dependencies:** Install python dependencies via pip:
+
+    pip install -r requirements.txt
+
 
 ### Installation
 
@@ -35,17 +48,13 @@ Navigate to the project directory:
 
     cd system-init-script
 
-Install Python dependencies:
-
-    pip install -r requirements.txt
-
 ### Usage
 
 Run the script:
 
     python system_init.py
 
-    Follow the on-screen instructions to initialize your system.
+Follow the on-screen instructions to initialize your system.
 
 ### Contributing
 
