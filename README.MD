@@ -27,12 +27,20 @@ This Python script automates system initialization and maintenance tasks for Deb
 
 Clone this repository to your local machine.
 
-```git clone https://github.com/yourusername/system-maintenance-script.git```
+```git clone https://github.com/ChrisGarey/system-init-script.git```
 
 Before running the script, make sure you have the required Python packages installed. You can install them using `pip`:
 
 
-```pip install -r REQUIREMENTS```
+For Debian-based distributions:
+
+```pip install -r requirements.txt -e .[debian]```
+
+For Arch-based distributions:
+
+```pip install -r requirements.txt -e .[arch]```
+
+This will install the specified packages according to the appropriate distribution.
 
 Run the script as a superuser (root) to execute system maintenance tasks.
 

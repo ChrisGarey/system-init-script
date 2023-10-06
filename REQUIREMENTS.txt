@@ -1,0 +1,15 @@
+# Common packages for all distributions
+pySMART>=1.0
+rich>=10.0
+speedtest-cli>=2.1
+
+# Packages for Debian-based distributions (e.g., Ubuntu)
+[debian]
+# Add packages specific to Debian-based distributions
+apt-get>=0.1
+geoip2>=4.1
+
+# Packages for Arch-based distributions (e.g., Arch Linux)
+[arch]
+# Add packages specific to Arch-based distributions
+reflector>=2023.0.0
