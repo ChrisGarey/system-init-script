@@ -17,11 +17,33 @@ This Python script automates system initialization and maintenance tasks for Deb
 🎨 Adds a colorful and customizable terminal banner.
 
 ## Requirements
+## Requirements
 
-    Python 3.x
-    pySMART Python package
-    rich Python package
-    speedtest-cli for network speed testing
+To run this script, you'll need the following dependencies:
+
+### Debian-based Distributions
+
+- [pySMART](https://pypi.org/project/pySMART/)
+- [rich](https://pypi.org/project/rich/)
+- [speedtest-cli](https://pypi.org/project/speedtest-cli/)
+
+You can install these packages using `pip`:
+
+
+```pip install pySMART rich speedtest-cli```
+
+### Arch-based Distributions
+
+On Arch-based distributions, the script relies on system package managers for dependencies. You can use the following commands to install the required packages:
+
+
+```# Install pySMART and rich using pacman sudo pacman -S pySMART python-rich```
+
+# Install speedtest-cli using pip
+```pip install speedtest-cli```
+
+# Install speedtest-cli using pip
+```pip install speedtest-cli```
 
 ## Usage
 
@@ -29,22 +51,13 @@ Clone this repository to your local machine.
 
 ```git clone https://github.com/ChrisGarey/system-init-script.git```
 
-Before running the script, make sure you have the required Python packages installed. You can install them using `pip`:
+Navigate to the project directory:
 
+```cd system-init-script```
 
-For Debian-based distributions:
+Run the script to execute system maintenance tasks.
 
-```pip install -r requirements.txt -e .[debian]```
-
-For Arch-based distributions:
-
-```pip install -r requirements.txt -e .[arch]```
-
-This will install the specified packages according to the appropriate distribution.
-
-Run the script as a superuser (root) to execute system maintenance tasks.
-
-```sudo python system_maintenance.py```
+```python3 system_maintenance.py```
 
 Follow the on-screen prompts to initiate the system maintenance process.
 
