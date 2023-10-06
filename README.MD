@@ -35,8 +35,9 @@ Follow the instructions below to get started with this system initialization scr
 
 - **Python dependencies:** Install python dependencies via pip:
 
-    ```pip install -r requirements.txt
-
+    ```
+    pip install -r requirements.txt
+    ```
 
 ### Installation
 
