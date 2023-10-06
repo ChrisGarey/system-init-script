@@ -2,7 +2,7 @@
 
 A Python script for system initialization and setup with colorful banners.
 
-![System Initialization](system-init.gif)
+![System Initialization](./images/system-init.gif)
 
 ## Overview
 
