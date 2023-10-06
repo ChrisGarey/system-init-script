@@ -6,12 +6,13 @@ A Python script for system initialization and setup with colorful banners.
 
 ## Overview
 
-This Python script automates system initialization tasks, such as checking system resources, starting services, and displaying a colorful welcome banner. It provides a visual and informative way to set up and prepare a system for use.
+This Python script automates system initialization tasks, such as checking system resources, starting services, upgrading and displaying a colorful welcome banner. It provides a visual and informative way to set up and prepare a system for use.
 
 ## Features
 
 - Check system resources for errors.
 - Start essential services like a firewall and SMART disk monitoring.
+- Updates and Upgrades the system.
 - Display a colorful and eye-catching welcome banner.
 - Provides a progress bar for each initialization step.
 
