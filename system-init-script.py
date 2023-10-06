@@ -11,7 +11,6 @@ SMARTCTL.sudo = True
 
 # Variables
 devlist = DeviceList()
-sda = '/dev/nvme0n1'
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 
@@ -47,12 +46,42 @@ if __name__ == "__main__":
             time.sleep(0.02)
 
     # Start system check
-    system_check = os.system("sudo smartctl --test=short -H %s >/dev/null 2>&1" % (sda))
-    if system_check == 0:
-         print("Disk is Ok.")
+    # Get the current user's home directory
+current_user = pwd.getpwuid(os.getuid()).pw_name
+home_directory = os.path.expanduser(f"~{current_user}")
+
+# List the partitions in the /dev/ directory
+dev_partition_list = os.listdir('/dev/')
+
+# Find the primary hard drive partition associated with the user's home directory
+# Get the current user's home directory
+current_user = pwd.getpwuid(os.getuid()).pw_name
+home_directory = os.path.expanduser(f"~{current_user}")
+
+# Get the device associated with the home directory
+try:
+    df_output = subprocess.check_output(["df", home_directory])
+    lines = df_output.decode("utf-8").strip().split("\n")
+    if len(lines) > 1:
+        device_info = lines[1].split()
+        device = device_info[0]
     else:
-         print("The system encountered an error checking disks. Please investigate.")
+        device = None
+except subprocess.CalledProcessError:
+    device = None
+
+if device:
+    print(f"The user's primary hard drive is {device}")
+
+    # Run a short disk scan without checking for encryption or SMART
+    system_check = os.system(f"sudo fsck -t ext4 -y {device}")
+    if system_check == 0:
+        print("Disk scan started.")
+    else:
+        print("The system encountered an error while starting the disk scan. Please investigate.")
     time.sleep(0.5)
+else:
+    print("Unable to determine the user's primary hard drive.")
 
     # Start update
     print("\nStarting update ...", end=' ')
