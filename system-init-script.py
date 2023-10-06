@@ -39,47 +39,99 @@ if __name__ == "__main__":
     # Check filesystem for any errors and if so, display an error message.
     print("Checking system resources ...", end=' ')
 
-    # Progress Bar
-    print(progress_bar()) if progress_bar() else None
+    with Progress() as progress:
+        task1 = progress.add_task("[#fff]Checking Resources", total=500)
+
+        while not progress.finished:
+            progress.update(task1, advance=7)
+            time.sleep(0.02)
 
     # Start system check
     system_check = os.system("sudo smartctl --test=short -H %s >/dev/null 2>&1" % (sda))
     if system_check == 0:
-         print("OK")
+         print("Disk is Ok.")
     else:
          print("The system encountered an error checking disks. Please investigate.")
     time.sleep(0.5)
 
-    # Start firewall and SMART disk services
-    print("Starting all the services ..", end=' ')
+    # Start update
+    print("\nStarting update ...", end=' ')
 
     # Progress Bar
-    print(progress_bar()) if progress_bar() else None
+    with Progress() as progress:
+        task1 = progress.add_task("[#fff]Updating System", total=500)
+
+        while not progress.finished:
+            progress.update(task1, advance=7)
+            time.sleep(0.02)
+
+    system_update = os.system("sudo apt-get update > /dev/null 2>&1")
+    if system_update == 0:
+         print("System updated.")
+    else:
+         print("The system encountered an error checking updating. Please investigate.")
+    time.sleep(0.5)
+
+    #Start upgrade
+    print("\nStarting upgrade ...", end=' ')
+    # Progress Bar
+    with Progress() as progress:
+        task1 = progress.add_task("[#fff]Upgrading System", total=500)
+
+        while not progress.finished:
+            progress.update(task1, advance=7)
+            time.sleep(0.02)
+    system_upgrade = os.system("sudo apt-get upgrade > /dev/null 2>&1")
+    if system_upgrade == 0:
+         print("System upgraded.")
+    else:
+         print("The system encountered an error upgrading. Please investigate.")
+    time.sleep(0.5)
+
+    # Start firewall and SMART disk services
+    print("\nStarting all the services ..", end=' ')
+
+    # Progress Bar
+    # Progress Bar
+    with Progress() as progress:
+        task1 = progress.add_task("[#fff]Starting Services", total=500)
+
+        while not progress.finished:
+            progress.update(task1, advance=7)
+            time.sleep(0.02)
 
     # Commands to execute
     firewall_start = os.system('sudo ufw enable >/dev/null 2>&1 && sudo smartctl -s on %s >/dev/null 2>&1' % (sda))
     if firewall_start == 0:
-         print("OK")
+         print("Firewall enabled.")
+         time.sleep(0.3)
+         print("Smart Disk enabled.")
     else:
          print("The system encountered an error starting services. Please investigate.")
     time.sleep(0.3)
 
     # Get the current user profile then store it.
-    print("Getting user profile ...", end=' ')
+    print("\nGetting user profile ...", end=' ')
     def get_username():
         return pwd.getpwuid(os.getuid())[0]
 
     # Progress Bar
-    print(progress_bar()) if progress_bar() else None
+    # Progress Bar
+    with Progress() as progress:
+        task1 = progress.add_task("[#fff]Grabbing user profile", total=500)
 
-    print("OK")
+        while not progress.finished:
+            progress.update(task1, advance=7)
+            time.sleep(0.02)
+
+    print("User profile set.")
     time.sleep(0.3)
 
     # Get and print the local IP address
-    print("Getting IP Address - ", ip_address)
+    print("\nGetting IP Address - ", ip_address)
     time.sleep(0.3)
 
-    print("All Set! System load completed.")
+    print("\nAll Set! System load completed.")
     time.sleep(0.3)
 
     print("Launching the Machine ...")
