@@ -1,0 +1,3 @@
+rich==12.5.1
+pySMART==1.2.1
+figlet==2.2.5
