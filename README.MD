@@ -43,7 +43,8 @@ Follow the on-screen prompts to initiate the system maintenance process.
 ## Customize
 
 You can customize the script by modifying the code to suit your specific needs. The script provides a foundation for automating system maintenance tasks on Debian-based distributions.
-Author
+
+### Author
 
 Christopher Garey
 GitHub: ChrisGarey
