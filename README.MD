@@ -2,6 +2,8 @@
 
 A Python script for system initialization and setup with colorful banners.
 
+![System Initialization](system.gif)
+
 ## Overview
 
 This Python script automates system initialization tasks, such as checking system resources, starting services, and displaying a colorful welcome banner. It provides a visual and informative way to set up and prepare a system for use.
